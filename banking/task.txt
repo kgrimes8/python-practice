@@ -1,0 +1,17 @@
+Create a Bank class:
+1. A function to withdraw money,
+2. A function to deposit money,
+3. A function to display it's balance,
+
+Create a Person class:
+1. Edit the Bank class so when a Bank is created it must belong to a Person,
+2. Allow a Person to have multiple Banks, but a Bank to only have one Person,
+
+Create an Employee class:
+1. Inherit from the Person class to keep the same fields,
+2. Add a function to get the Employee's job title (default is unknown'),
+3. Make it so Employees get an additional £100 if they open a Bank,
+
+Create a Customer class:
+1. Inherit from the Person class,
+2. Make the Person class Abstract (so an instance of Person cannot exist, only Customer or Employee)

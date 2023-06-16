@@ -10,19 +10,15 @@ Add/Edit/Delete any code you see (although I don't see why you would because its
 
 class Zoo:
     def __init__(self):
-        self.monkey = 0
-        self.elephant = 0
-        self.flamingo = 0
+        self.animals = {}
 
     # add animal(s) functions
-    def add_animals(self, animal) -> None:
+    def add_animals(self, animal, value = 1) -> None:
         animal = animal.lower()
-        if animal == "monkey":
-            self.monkey += 1
-        if animal == "elephant":
-            self.elephant += 1
-        if animal == "flamingo":
-            self.flamingo += 1
+        if animal not in self.animals.keys():
+            self.animals[animal] = value
+        else:
+            self.animals[animal] = self.animals[animal] + value
 
     # functions of default animals to add
     def add_monkey(self):
@@ -37,16 +33,13 @@ class Zoo:
     # counting functions
     def count_animal(self, animal) -> int:
         animal = animal.lower()
-        if animal == "monkey":
-            return self.monkey
-        if animal == "elephant":
-            return self.elephant
-        if animal == "flamingo":
-            return self.flamingo
+        return self.animals.get(animal, 0)
 
     def count_animals(self) -> int:
-        return sum([self.monkey, self.elephant, self.flamingo])
-
+        total = 0
+        for value in self.animals.values():
+            total += value
+        return total
 
 if __name__ == "__main__":
     zoo = Zoo()
